@@ -1,47 +1,66 @@
-const pokemonList = document.getElementById('pokemonList')
-const loadMoreButton = document.getElementById('loadMoreButton')
+const pokemonList = document.getElementById('pokemonList');
+const loadFirstGeneration = document.getElementById('loadFirstGeneration');
+const loadSecondGeneration = document.getElementById('loadSecondGeneration');
+const loadThirdGeneration = document.getElementById('loadThirdGeneration');
+const loadFourthGeneration = document.getElementById('loadFourthGeneration');
 
-const maxRecords = 151
-const limit = 10
-let offset = 0;
-
-function convertPokemonToLi(pokemon) {
-    return `
-        <li class="pokemon ${pokemon.type}">
-            <span class="number">#${pokemon.number}</span>
-            <span class="name">${pokemon.name}</span>
-
-            <div class="detail">
-                <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                </ol>
-
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
-            </div>
-        </li>
-    `
+function chooseGeneration(){
+    loadFirstGeneration.classList.add('standard');
+    loadSecondGeneration.classList.add('standard');
+    loadThirdGeneration.classList.add('standard');
+    loadFourthGeneration.classList.add('standard');
 }
 
-function loadPokemonItens(offset, limit) {
-    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
-        const newHtml = pokemons.map(convertPokemonToLi).join('')
-        pokemonList.innerHTML += newHtml
-    })
+function loadPokemonItems(offset, limit) {
+    pokeApi.getPokemons(offset, limit)
+        .then((pokemons = []) => {
+            const newHTML = pokemons.map((pokemon) => `
+            <li class="pokemon ${pokemon.type}">
+                <span class="number">#${pokemon.number}</span>
+                <span class="name">${pokemon.name}</span>
+                <div class="details">
+                    <ol class="types">
+                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                    </ol>
+                    <img src="${pokemon.photo}" alt="${pokemon.name}"/>
+                </div>
+            </li>`
+
+            ).join('');
+            pokemonList.innerHTML += newHTML;
+        });
 }
 
-loadPokemonItens(offset, limit)
+loadPokemonItems(0, 151);
 
-loadMoreButton.addEventListener('click', () => {
-    offset += limit
-    const qtdRecordsWithNexPage = offset + limit
+loadFirstGeneration.addEventListener('click', () => {
+    pokemonList.innerHTML = '';
+    loadPokemonItems(0, 151);
+    chooseGeneration();
+    loadFirstGeneration.classList.remove('standard');
+    loadFirstGeneration.classList.add('focusButton');    
+});
 
-    if (qtdRecordsWithNexPage >= maxRecords) {
-        const newLimit = maxRecords - offset
-        loadPokemonItens(offset, newLimit)
+loadSecondGeneration.addEventListener('click', () => {
+    pokemonList.innerHTML = '';
+    loadPokemonItems(151, 100);
+    chooseGeneration();
+    loadSecondGeneration.classList.remove('standard');
+    loadSecondGeneration.classList.add('focusButton');
+});
 
-        loadMoreButton.parentElement.removeChild(loadMoreButton)
-    } else {
-        loadPokemonItens(offset, limit)
-    }
-})
+loadThirdGeneration.addEventListener('click', () => {
+    pokemonList.innerHTML = '';
+    loadPokemonItems(251, 135);
+    chooseGeneration();
+    loadThirdGeneration.classList.remove('standard');
+    loadThirdGeneration.classList.add('focusButton');
+});
+
+loadFourthGeneration.addEventListener('click', () => {
+    pokemonList.innerHTML = '';
+    loadPokemonItems(386, 107);
+    chooseGeneration();
+    loadFourthGeneration.classList.remove('standard');
+    loadFourthGeneration.classList.add('focusButton');
+});
