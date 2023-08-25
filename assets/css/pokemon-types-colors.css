@@ -1,55 +1,110 @@
 
 .normal {
-    background-color: #A8A77A;
+    background-image: url(../images/normal-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .fire {
-    background-color: #EE8130;
+    background-image: url(../images/fire-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .water {
-    background-color: #6390F0;
+    background-image: url(../images/water-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .electric {
-    background-color: #F7D02C;
+    background-image: url(../images/electric-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .grass {
-    background-color: #7AC74C;
+    background-image: url(../images/grass-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .ice {
-    background-color: #96D9D6;
+    background-image: url(../images/ice-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .fighting {
-    background-color: #C22E28;
+    background-image: url(../images/fighting-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .poison {
-    background-color: #A33EA1;
+    background-image: url(../images/poison-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .ground {
-    background-color: #E2BF65;
+    background-image: url(../images/ground-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .flying {
-    background-color: #A98FF3;
+    background-image: url(../images/flying-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .psychic {
-    background-color: #F95587;
+    background-image: url(../images/physic-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .bug {
-    background-color: #A6B91A;
+    background-image: url(../images/bug-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .rock {
-    background-color: #B6A136;
+    background-image: url(../images/rock-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .ghost {
-    background-color: #735797;
+    background-image: url(../images/ghost-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .dragon {
-    background-color: #6F35FC;
+    background-image: url(../images/dragon-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .dark {
-    background-color: #705746;
+    background-image: url(../images/dark-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .steel {
-    background-color: #B7B7CE;
+    background-image: url(../images/steel-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
 .fairy {
-    background-color: #D685AD;
+    background-image: url(../images/fairy-type.png);
+    background-position: center;
+    background-size: cover;
 } 
+
+/* Créditos de Arte: https://www.deviantart.com/elbarnzo */

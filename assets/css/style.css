@@ -95,18 +95,7 @@ body {
     padding: 1rem;
 }
 
-.pagination .standard {
-    padding: 0.25rem 0.6rem;
-    margin: 0.25rem 0.2rem;
-    font-size: 0.6rem;
-    background-color: #6C79DB;
-    border: none;
-    border-radius: 0.5rem;
-    color: #FFF;
-    box-shadow: 5px 4px 5px black;
-}
-
-.focusButton {
+.pagination .focusButton {
     padding: 0.25rem 0.6rem;
     margin: 0.25rem 0.2rem;
     font-size: 0.6rem;
@@ -115,7 +104,22 @@ body {
     border-radius: 0.5rem;
     color: #FFF;
     box-shadow: 5px 4px 5px #6C79DB;
+    cursor: pointer;
 }
+
+.pagination .standardButton {
+    padding: 0.25rem 0.6rem;
+        margin: 0.25rem 0.2rem;
+    font-size: 0.6rem;
+    background-color: #6C79DB;
+    border: none;
+    border-radius: 0.5rem;
+    color: #FFF;
+    box-shadow: 5px 4px 5px black;
+    cursor: pointer;
+}
+
+
 
 @media screen and (min-width: 1080px) {
     .content {
@@ -130,10 +134,6 @@ body {
         letter-spacing: 20px;
     }
     
-    .content h3 {
-        font-size: 2rem;
-        letter-spacing: 5px;
-    }
 }
 
 @media screen and (min-width: 380px) {
@@ -141,7 +141,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
-    .pagination .standard {
+    .pagination .standardButton {
         margin: 0.25rem 0.5rem;
         font-size: 1rem;
     }
